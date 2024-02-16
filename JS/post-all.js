@@ -59,6 +59,7 @@ function fetchAllPosts(page) {
         ) {
           const imageElement = document.createElement("img");
           imageElement.src = post._embedded["wp:featuredmedia"][0].source_url;
+          imageElement.classList.add("post-image"); // Add a class to the image element
           const altText = `${
             post.title.rendered
           } - ${post.content.rendered.substring(0, 50)}`; // Descriptive alt text

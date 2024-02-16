@@ -6,6 +6,9 @@
   nav.menu-container {
     width: 100%;
   }
+  .post-image {
+    filter: none; /* Remove grayscale filter */
+  }
 
   .hello-image {
     margin-left: 0%;
