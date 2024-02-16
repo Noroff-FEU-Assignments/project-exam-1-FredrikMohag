@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NOIZY - Dark Wave and Post-Punk Music</title>
+    <meta
+      name="description"
+      content="A Dark Wave and Post-Punk Odyssey Through the Rebel Anthems of the Underground."
+    />
+    <link rel="canonical" href="http://www.haakansson.com/" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta property="og:title" content="NOIZY - Dark Wave and Post-Punk Music" />
+    <meta
+      property="og:description"
+      content="A Dark Wave and Post-Punk Odyssey Through the Rebel Anthems of the Underground."
+    />
+    <meta
+      property="og:image"
+      content="http://www.example.com/images/og-image.jpg"
+    />
+
+    <meta property="og:url" content="http://www.example.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="NOIZY - Dark Wave and Post-Punk Music"
+    />
+    <meta
+      name="twitter:description"
+      content="A Dark Wave and Post-Punk Odyssey Through the Rebel Anthems of the Underground."
+    />
+    <meta
+      name="twitter:image"
+      content="http://www.example.com/images/twitter-image.jpg"
+    />
+    <link rel="preload" href="images/logo.png" as="image" />
+    <link rel="preload" href="images/hello-image.jpeg" as="image" />
+    <link href="/CSS/styles.css" rel="stylesheet" />
+    <link href="/CSS/media.css" rel="stylesheet" />
+    <!-- Hotjar Tracking Code for NOiZY ECHO -->
+    <script>
+      (function (h, o, t, j, a, r) {
+        h.hj =
+          h.hj ||
+          function () {
+            (h.hj.q = h.hj.q || []).push(arguments);
+          };
+        h._hjSettings = { hjid: 3864520, hjsv: 6 };
+        a = o.getElementsByTagName("head")[0];
+        r = o.createElement("script");
+        r.async = 1;
+        r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
+        a.appendChild(r);
+      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+    </script>
+  </head>
+
+  <body>
+    <header>
+      <nav id="stickyMenu" class="menu-container">
+        <a href="blog.html" class="active">BLOG /</a>
+        <a href="about.html" class="active">ABOUT /</a>
+        <a href="hello.html" class="active">HELLO /</a>
+      </nav>
+    </header>
+    <img
+      class="hello-image"
+      src="images/hello-image.jpeg"
+      alt="Background image vinyl"
+    />
+    <div class="noizy-container">
+      <img
+        class="logo-image"
+        src="images/logo.png"
+        alt="Blog logo"
+        id="logoImage"
+      />
+    </div>
+    <div class="main-container">
+      <div class="left-info">
+        <h1>WELCOME</h1>
+        <p>
+          Noisy Echo is your go-to music blog, showcasing an eclectic taste in
+          music with a focus on post-punk and darkwave gems. Dive into our
+          curated selections and explore the depths of these captivating genres
+          with us.
+        </p>
+        <h2>UNITY</h2>
+        <p>
+          If you're eager to make an impact and interested in featuring on my
+          blog or seeking collaboration to highlight your work, I invite you to
+          reach out. I'm keen to explore partnerships and introduce fresh
+          perspectives. Contact me to discuss potential collaboration.
+        </p>
+        <h3>FOLLOW ME</h3>
+        <div class="social-container">
+          <div class="icon-with-text">
+            <a
+              href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
+              target="_blank"
+            >
+              <img src="images/spotify.png" alt="spotify" class="socials" />
+              <span class="text">spotify</span>
+            </a>
+          </div>
+
+          <div class="icon-with-text">
+            <a
+              href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
+              target="_blank"
+            >
+              <img src="images/instagram.png" alt="instagram" class="socials" />
+              <span class="text">instagram</span>
+            </a>
+          </div>
+
+          <div class="icon-with-text">
+            <a href="https://twitter.com/?lang=sv" target="_blank">
+              <img src="images/twitter.png" alt="twitter" class="socials" />
+              <span class="text">twitter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="main-info">
+        <h2>LATEST POSTS</h2>
+        <div id="carousel" class="carousel">
+          <div class="carousel-slides"></div>
+          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <h2>MORE POSTS</h2>
+        <div id="posts-container"></div>
+      </div>
+      <div id="scrollToTopContainer" style="display: none">
+        <img id="scrollToTopImage" src="images/scroll.png" alt="scrollToTop" />
+      </div>
+    </div>
+    <div id="overlay" style="display: none"></div>
+
+    <div class="newsletter-container" id="newsletter" style="display: none">
+      <h2>NEWSLETTER</h2>
+      <form id="newsletterForm">
+        <label for="email">Email Address:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Your Email Address"
+          required
+        />
+        <button type="submit">SUBSCRIBE NOW</button>
+        <p id="error-message" style="display: none">
+          Please enter a valid email address.
+        </p>
+      </form>
+      <img
+        class="closing-tag"
+        src="images/closing.png"
+        alt="closing newsletter X"
+      />
+    </div>
+
+    <iframe
+      src="https://open.spotify.com/embed/playlist/1L7BJdzSOcYXVCNUEA7oBr"
+      class="spotify-embed"
+      allow="encrypted-media"
+    ></iframe>
+    <footer>
+      <div class="footer-container">
+        <img
+          class="footer-logo"
+          src="images/logo.png"
+          alt="blog image footer"
+          id="footerImage"
+        />
+        <div class="footer-text">
+          <div class="footer-menu">
+            <a href="blog.html" class="active">BLOG /</a>
+            <a href="about.html" class="active">ABOUT /</a>
+            <a href="hello.html" class="active">HELLO /</a>
+          </div>
+          <p>
+            Site designed and developed by Fredrik Mohag Håkansson. Copyright ©
+            2023–2024
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-icons">
+        <a
+          href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
+          target="_blank"
+        >
+          <img src="images/spotify.png" alt="spotify" class="footer-socials" />
+        </a>
+        <a
+          href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
+        >
+          <img
+            src="images/instagram.png"
+            alt="instagram"
+            class="footer-socials"
+          />
+        </a>
+        <a href="https://twitter.com/?lang=sv">
+          <img src="images/twitter.png" alt="twitter" class="footer-socials" />
+        </a>
+      </div>
+    </footer>
+    <script src="JS/newsletter.js"></script>
+    <script src="JS/post-half.js"></script>
+    <script src="JS/carousel.js"></script>
+    <script src="JS/logo.js"></script>
+    <script src="JS/scroll.js"></script>
+  </body>
+</html>
