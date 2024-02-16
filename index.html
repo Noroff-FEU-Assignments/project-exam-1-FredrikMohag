@@ -20,7 +20,6 @@
       property="og:image"
       content="http://www.example.com/images/og-image.jpg"
     />
-
     <meta property="og:url" content="http://www.example.com/" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -69,6 +68,7 @@
       class="hello-image"
       src="images/hello-image.jpeg"
       alt="Background image vinyl"
+      aria-hidden="true"
     />
     <div class="noizy-container">
       <img
@@ -79,7 +79,7 @@
       />
     </div>
     <div class="main-container">
-      <div class="left-info">
+      <div class="left-info" role="main">
         <h1>WELCOME</h1>
         <p>
           Noisy Echo is your go-to music blog, showcasing an eclectic taste in
@@ -125,7 +125,7 @@
         </div>
       </div>
 
-      <div class="main-info">
+      <div class="main-info" role="complementary">
         <h2>LATEST POSTS</h2>
         <div id="carousel" class="carousel">
           <div class="carousel-slides"></div>
@@ -135,13 +135,16 @@
         <h2>MORE POSTS</h2>
         <div id="posts-container"></div>
       </div>
-      <div id="scrollToTopContainer" style="display: none">
+      <div id="scrollToTopContainer" aria-hidden="true" style="display: none">
         <img id="scrollToTopImage" src="images/scroll.png" alt="scrollToTop" />
       </div>
     </div>
-    <div id="overlay" style="display: none"></div>
-
-    <div class="newsletter-container" id="newsletter" style="display: none">
+    <div
+      class="newsletter-container"
+      id="newsletter"
+      aria-live="polite"
+      style="display: none"
+    >
       <h2>NEWSLETTER</h2>
       <form id="newsletterForm">
         <label for="email">Email Address:</label>
@@ -160,6 +163,7 @@
         class="closing-tag"
         src="images/closing.png"
         alt="closing newsletter X"
+        style="display: none"
       />
     </div>
 
@@ -167,6 +171,8 @@
       src="https://open.spotify.com/embed/playlist/1L7BJdzSOcYXVCNUEA7oBr"
       class="spotify-embed"
       allow="encrypted-media"
+      title="Embedded Spotify Playlist"
+      aria-label="Embedded Spotify Playlist"
     ></iframe>
     <footer>
       <div class="footer-container">

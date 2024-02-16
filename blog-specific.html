@@ -61,18 +61,23 @@
   </head>
 
   <body>
-    <header>
-      <nav id="stickyMenu" class="menu-container">
+    <header role="banner">
+      <nav id="stickyMenu" class="menu-container" role="navigation">
         <a href="blog.html" class="active">BLOG /</a>
         <a href="about.html" class="active">ABOUT /</a>
         <a href="hello.html" class="active">HELLO /</a>
       </nav>
     </header>
-    <img class="hello-image" src="images/hello-image.jpeg" alt="hello-image" />
-    <div class="noizy-container">
+    <img
+      class="hello-image"
+      src="images/hello-image.jpeg"
+      alt="hello-image"
+      aria-hidden="true"
+    />
+    <div class="noizy-container" role="banner">
       <img class="logo-image" src="images/logo.png" alt="logo" id="logoImage" />
     </div>
-    <div class="main-container">
+    <div class="main-container" role="main">
       <div class="left-info">
         <h1>WELCOME</h1>
         <p>
@@ -96,6 +101,7 @@
             <a
               href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
               target="_blank"
+              aria-label="spotify"
             >
               <img src="images/spotify.png" alt="spotify" class="socials" />
               <span class="text">spotify</span>
@@ -105,20 +111,25 @@
             <a
               href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
               target="_blank"
+              aria-label="instagram"
             >
               <img src="images/instagram.png" alt="instagram" class="socials" />
               <span class="text">instagram</span>
             </a>
           </div>
           <div class="icon-with-text">
-            <a href="https://twitter.com/?lang=sv" target="_blank">
+            <a
+              href="https://twitter.com/?lang=sv"
+              target="_blank"
+              aria-label="twitter"
+            >
               <img src="images/twitter.png" alt="twitter" class="socials" />
               <span class="text">twitter</span>
             </a>
           </div>
         </div>
       </div>
-      <div class="main-info">
+      <div class="main-info" role="region" aria-labelledby="main-content">
         <div id="main-content">
           <div id="specific-blog"></div>
         </div>
@@ -129,8 +140,10 @@
       src="https://open.spotify.com/embed/playlist/1L7BJdzSOcYXVCNUEA7oBr"
       class="spotify-embed"
       allow="encrypted-media"
+      title="Embedded Spotify Playlist"
+      aria-label="Embedded Spotify Playlist"
     ></iframe>
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-container">
         <img
           class="footer-logo"
@@ -155,6 +168,7 @@
           <a
             href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
             target="_blank"
+            aria-label="spotify"
           >
             <img
               src="images/spotify.png"
@@ -167,6 +181,7 @@
           <a
             href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
             target="_blank"
+            aria-label="instagram"
           >
             <img
               src="images/instagram.png"
@@ -176,7 +191,11 @@
           </a>
         </div>
         <div class="icons-footer">
-          <a href="https://twitter.com/?lang=sv" target="_blank">
+          <a
+            href="https://twitter.com/?lang=sv"
+            target="_blank"
+            aria-label="twitter"
+          >
             <img
               src="images/twitter.png"
               alt="twitter"

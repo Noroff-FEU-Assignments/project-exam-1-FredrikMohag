@@ -5,16 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NOIZY - Dark Wave and Post-Punk Music Journey</title>
-
     <meta
       name="description"
       content="Embark on a Dark Wave and Post-Punk Odyssey. Explore the Rebel Anthems of the Underground with NOIZY."
     />
-
     <link rel="canonical" href="https://www.yourwebsite.com/" />
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
@@ -29,7 +25,6 @@
       content="https://www.yourwebsite.com/path/to/image.jpg"
     />
     <meta property="og:url" content="https://www.yourwebsite.com/" />
-
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -66,8 +61,8 @@
   </head>
 
   <body>
-    <header>
-      <nav id="stickyMenu" class="menu-container">
+    <header role="banner">
+      <nav id="stickyMenu" class="menu-container" role="navigation">
         <a href="blog.html" class="active">BLOG /</a>
         <a href="about.html" class="active">ABOUT /</a>
         <a href="hello.html" class="active">HELLO /</a>
@@ -77,8 +72,9 @@
       class="hello-image"
       src="images/hello-image.jpeg"
       alt="Background image vinyl"
+      aria-hidden="true"
     />
-    <div class="noizy-container">
+    <div class="noizy-container" role="banner">
       <img
         class="logo-image"
         src="images/logo.png"
@@ -86,7 +82,7 @@
         id="logoImage"
       />
     </div>
-    <div class="main-container">
+    <div class="main-container" role="main">
       <div class="left-info">
         <h1>ABOUT</h1>
         <p>
@@ -108,6 +104,7 @@
             <a
               href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
               target="_blank"
+              aria-label="spotify"
             >
               <img src="images/spotify.png" alt="spotify" class="socials" />
               <span class="text">spotify</span>
@@ -118,6 +115,7 @@
             <a
               href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
               target="_blank"
+              aria-label="instagram"
             >
               <img src="images/instagram.png" alt="instagram" class="socials" />
               <span class="text">instagram</span>
@@ -125,7 +123,11 @@
           </div>
 
           <div class="icon-with-text">
-            <a href="https://twitter.com/?lang=sv" target="_blank">
+            <a
+              href="https://twitter.com/?lang=sv"
+              target="_blank"
+              aria-label="twitter"
+            >
               <img src="images/twitter.png" alt="twitter" class="socials" />
               <span class="text">twitter</span>
             </a>
@@ -133,8 +135,8 @@
         </div>
       </div>
 
-      <div class="main-info">
-        <h2>THIS IS</h2>
+      <div class="main-info" role="region" aria-labelledby="main-content">
+        <h2 id="main-content">THIS IS</h2>
         <p>
           Welcome to Noisy Echo, the ultimate destination for fans of dark wave
           and post-punk music. I'm Fred, the creator of this blog, driven by my
@@ -146,7 +148,7 @@
         <img
           class="about-image"
           src="images/about%20image2.jpg"
-          alt="Image showcasing the blog's creater"
+          alt="Image showcasing the blog's creator"
         />
         <p>
           Here, we dive deep into the essence of dark wave and post-punk,
@@ -166,8 +168,9 @@
       src="https://open.spotify.com/embed/playlist/1L7BJdzSOcYXVCNUEA7oBr"
       class="spotify-embed"
       allow="encrypted-media"
+      aria-hidden="true"
     ></iframe>
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-container">
         <img
           class="footer-logo"
@@ -176,7 +179,7 @@
           id="footerImage"
         />
         <div class="footer-text">
-          <div class="footer-menu">
+          <div class="footer-menu" role="navigation">
             <a href="blog.html" class="active">BLOG /</a>
             <a href="about.html" class="active">ABOUT /</a>
             <a href="hello.html" class="active">HELLO /</a>
@@ -192,6 +195,7 @@
           <a
             href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
             target="_blank"
+            aria-label="spotify"
           >
             <img
               src="images/spotify.png"
@@ -204,6 +208,7 @@
           <a
             href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
             target="_blank"
+            aria-label="instagram"
           >
             <img
               src="images/instagram.png"
@@ -213,7 +218,11 @@
           </a>
         </div>
         <div class="icons-footer">
-          <a href="https://twitter.com/?lang=sv" target="_blank">
+          <a
+            href="https://twitter.com/?lang=sv"
+            target="_blank"
+            aria-label="twitter"
+          >
             <img
               src="images/twitter.png"
               alt="twitter"

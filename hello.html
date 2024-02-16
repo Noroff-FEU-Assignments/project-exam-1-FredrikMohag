@@ -12,7 +12,6 @@
     />
 
     <link rel="canonical" href="https://www.yourwebsite.com/" />
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
     <meta property="og:type" content="website" />
@@ -65,8 +64,8 @@
     </script>
   </head>
   <body>
-    <header>
-      <nav id="stickyMenu" class="menu-container">
+    <header role="banner">
+      <nav id="stickyMenu" class="menu-container" role="navigation">
         <a href="blog.html" class="active">BLOG /</a>
         <a href="about.html" class="active">ABOUT /</a>
         <a href="hello.html" class="active">HELLO /</a>
@@ -76,8 +75,9 @@
       class="hello-image"
       src="images/hello-image.jpeg"
       alt="Background image vinyl"
+      aria-hidden="true"
     />
-    <div class="noizy-container">
+    <div class="noizy-container" role="banner">
       <img
         class="logo-image"
         src="images/logo.png"
@@ -86,7 +86,7 @@
       />
     </div>
 
-    <div class="main-container">
+    <div class="main-container" role="main">
       <div class="left-info">
         <h1>HELLO</h1>
         <p>
@@ -108,6 +108,7 @@
             <a
               href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
               target="_blank"
+              aria-label="spotify"
             >
               <img src="images/spotify.png" alt="spotify" class="socials" />
               <span class="text">spotify</span>
@@ -118,6 +119,7 @@
             <a
               href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
               target="_blank"
+              aria-label="instagram"
             >
               <img src="images/instagram.png" alt="instagram" class="socials" />
               <span class="text">instagram</span>
@@ -125,7 +127,11 @@
           </div>
 
           <div class="icon-with-text">
-            <a href="https://twitter.com/?lang=sv" target="_blank">
+            <a
+              href="https://twitter.com/?lang=sv"
+              target="_blank"
+              aria-label="twitter"
+            >
               <img src="images/twitter.png" alt="twitter" class="socials" />
               <span class="text">twitter</span>
             </a>
@@ -145,26 +151,40 @@
         </p>
 
         <div class="form-container">
-          <form id="contactForm">
+          <form id="contactForm" role="form">
             <div>
               <label for="name">Name:</label>
-              <input type="text" id="name" name="name" />
-              <div class="error" id="nameError"></div>
+              <input type="text" id="name" name="name" aria-label="Name" />
+              <div class="error" id="nameError" aria-live="polite"></div>
             </div>
             <div>
               <label for="email">Email Address:</label>
-              <input type="email" id="email" name="email" />
-              <div class="error" id="emailError"></div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                aria-label="Email Address"
+              />
+              <div class="error" id="emailError" aria-live="polite"></div>
             </div>
             <div>
               <label for="subject">Subject:</label>
-              <input type="text" id="subject" name="subject" />
-              <div class="error" id="subjectError"></div>
+              <input
+                type="text"
+                id="subject"
+                name="subject"
+                aria-label="Subject"
+              />
+              <div class="error" id="subjectError" aria-live="polite"></div>
             </div>
             <div>
               <label for="message">Message:</label>
-              <textarea id="message" name="message"></textarea>
-              <div class="error" id="messageError"></div>
+              <textarea
+                id="message"
+                name="message"
+                aria-label="Message"
+              ></textarea>
+              <div class="error" id="messageError" aria-live="polite"></div>
             </div>
             <button type="submit">Submit</button>
           </form>
@@ -175,8 +195,10 @@
       src="https://open.spotify.com/embed/playlist/1L7BJdzSOcYXVCNUEA7oBr"
       class="spotify-embed"
       allow="encrypted-media"
+      title="Embedded Spotify Playlist"
+      aria-label="Embedded Spotify Playlist"
     ></iframe>
-    <footer>
+    <footer role="contentinfo">
       <div class="footer-container">
         <img
           class="footer-logo"
@@ -200,12 +222,14 @@
         <a
           href="https://open.spotify.com/playlist/1L7BJdzSOcYXVCNUEA7oBr?si=C69chwOAQ4y44TJrGymy6A&pi=e-hq9MyttwQX-A"
           target="_blank"
+          aria-label="spotify"
         >
           <img src="images/spotify.png" alt="spotify" class="footer-socials" />
         </a>
         <a
           href="https://www.instagram.com/fyrklang?igsh=MXF0a2hxem05bndqdg%3D%3D&utm_source=qr"
           target="_blank"
+          aria-label="instagram"
         >
           <img
             src="images/instagram.png"
@@ -213,7 +237,11 @@
             class="footer-socials"
           />
         </a>
-        <a href="https://twitter.com/?lang=sv" target="_blank">
+        <a
+          href="https://twitter.com/?lang=sv"
+          target="_blank"
+          aria-label="twitter"
+        >
           <img src="images/twitter.png" alt="twitter" class="footer-socials" />
         </a>
       </div>

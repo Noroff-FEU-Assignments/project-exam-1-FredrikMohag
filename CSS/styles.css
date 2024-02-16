@@ -144,6 +144,7 @@ footer {
   text-align: left;
   padding-right: 20px;
 }
+
 .social-container {
   border-bottom: 1px dotted black;
   text-align: left;
@@ -217,7 +218,7 @@ a {
 /* Contact form */
 .form-container {
   display: flex;
-  justify-content: center; /* Center the content horizontally */
+  justify-content: center;
   padding: 20px;
 }
 
