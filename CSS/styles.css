@@ -68,7 +68,7 @@ nav.menu-container a {
   z-index: 1;
   margin-left: 22%;
   width: 56%;
-  height: 150px;
+  height: 200px;
   filter: grayscale(100%);
   transition: filter 1s ease;
 }
