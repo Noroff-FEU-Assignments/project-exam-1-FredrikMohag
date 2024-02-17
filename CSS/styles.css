@@ -56,7 +56,7 @@ nav.menu-container a {
   margin: 0 10px;
   text-decoration: none;
   color: black;
-  font-size: 16px;
+  font-size: 17px;
 }
 .menu-container .crossed-page {
   text-decoration: line-through;
@@ -145,7 +145,7 @@ footer {
 }
 .main-info {
   flex: 4;
-  font-size: 14px;
+  font-size: 16px;
   padding-left: 15px;
 }
 .main-info p {
@@ -163,7 +163,7 @@ footer {
 
 .left-info {
   flex: 1;
-  font-size: 12px;
+  font-size: 13px;
   text-align: left;
   padding-right: 20px;
 }
