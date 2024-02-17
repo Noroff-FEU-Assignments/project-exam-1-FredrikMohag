@@ -5,17 +5,17 @@ html {
   padding: 0 auto;
 }
 p {
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted rgb(218, 40, 188);
   padding-bottom: 10px;
 }
 
 h1 {
-  border-bottom: 1px dotted black;
-  border-top: 1px dotted black;
+  border-bottom: 2px dotted rgb(218, 40, 188);
+  border-top: 2px dotted rgb(218, 40, 188);
 }
 h2,
 h3 {
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted rgb(218, 40, 188);
 }
 
 /* JS:style */
@@ -24,7 +24,7 @@ h3 {
 }
 .read-more-link {
   float: right;
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted rgb(218, 40, 188);
 }
 .post-image {
   height: 350px;
@@ -169,7 +169,7 @@ footer {
 }
 
 .social-container {
-  border-bottom: 1px dotted black;
+  border-bottom: 2px dotted rgb(218, 40, 188);
   text-align: left;
 }
 
