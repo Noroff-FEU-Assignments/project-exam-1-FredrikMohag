@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let slideIndex = 0;
+  let touchStartX = 0;
   fetchLatestPosts();
 
   function moveSlide(n) {
@@ -71,4 +72,30 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector(".prev")
     .addEventListener("click", () => moveSlide(-1));
   document.querySelector(".next").addEventListener("click", () => moveSlide(1));
+
+  // Swipe functionality
+  const carousel = document.querySelector(".carousel");
+  carousel.addEventListener("touchstart", handleTouchStart, false);
+  carousel.addEventListener("touchmove", handleTouchMove, false);
+
+  function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+  }
+
+  function handleTouchMove(event) {
+    if (!touchStartX) {
+      return;
+    }
+
+    let touchEndX = event.touches[0].clientX;
+    let deltaX = touchStartX - touchEndX;
+
+    if (deltaX > 50) {
+      moveSlide(1); // swipe left
+    } else if (deltaX < -50) {
+      moveSlide(-1); // swipe right
+    }
+
+    touchStartX = 0;
+  }
 });
