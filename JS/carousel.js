@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   let slideIndex = 0;
   let touchStartX = 0;
+  let touchEndX = 0;
+  const minSwipeDistance = 50; // Minimum distance required for a swipe
+
   fetchLatestPosts();
 
   function moveSlide(n) {
@@ -77,25 +80,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const carousel = document.querySelector(".carousel");
   carousel.addEventListener("touchstart", handleTouchStart, false);
   carousel.addEventListener("touchmove", handleTouchMove, false);
+  carousel.addEventListener("touchend", handleTouchEnd, false);
 
   function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
   }
 
   function handleTouchMove(event) {
-    if (!touchStartX) {
-      return;
+    touchEndX = event.touches[0].clientX;
+  }
+
+  function handleTouchEnd() {
+    const deltaX = touchStartX - touchEndX;
+    if (Math.abs(deltaX) > minSwipeDistance) {
+      if (deltaX > 0) {
+        moveSlide(1); // swipe left
+      } else {
+        moveSlide(-1); // swipe right
+      }
     }
-
-    let touchEndX = event.touches[0].clientX;
-    let deltaX = touchStartX - touchEndX;
-
-    if (deltaX > 50) {
-      moveSlide(1); // swipe left
-    } else if (deltaX < -50) {
-      moveSlide(-1); // swipe right
-    }
-
+    // Reset touch positions
     touchStartX = 0;
+    touchEndX = 0;
   }
 });
