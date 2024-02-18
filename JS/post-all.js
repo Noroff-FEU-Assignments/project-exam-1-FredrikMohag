@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Document is ready."); // Log when DOM is fully loaded
+  console.log("Document is ready.");
   fetchAllPosts(currentPage);
   setupOlderPostsListener();
-  setupBackToTopButton();
 });
 
-let currentPage = 1; // Keep track of the current page
-console.log(`Current Page: ${currentPage}`); // Log the initial current page
+let currentPage = 1;
+console.log(`Current Page: ${currentPage}`);
 
 function fetchAllPosts(page) {
   const postsApiUrl = `https://www.haakansson.no/wp-json/wp/v2/posts?_embed&per_page=10&page=${page}`;
-  console.log(`Fetching posts from: ${postsApiUrl}`); // Log the API URL being fetched
+  console.log(`Fetching posts from: ${postsApiUrl}`);
 
   fetch(postsApiUrl)
     .then((response) => {
@@ -22,17 +21,16 @@ function fetchAllPosts(page) {
       return response.json();
     })
     .then((posts) => {
-      console.log(`Received ${posts.length} posts for page ${page}.`); // Log the number of posts fetched
+      console.log(`Received ${posts.length} posts for page ${page}.`);
       const mainInfoContainer = document.getElementById("main-info");
       if (page === 1) {
-        // Safely clear the container's content
         while (mainInfoContainer.firstChild) {
           mainInfoContainer.removeChild(mainInfoContainer.firstChild);
         }
       }
 
       posts.forEach((post) => {
-        console.log(`Processing post: ${post.title.rendered}`); // Log the title of each post being processed
+        console.log(`Processing post: ${post.title.rendered}`);
         const postElement = document.createElement("div");
         postElement.classList.add("post");
 
@@ -49,7 +47,6 @@ function fetchAllPosts(page) {
         dateElement.style.fontStyle = "italic";
 
         const contentElement = document.createElement("div");
-        // Sanitize and set the HTML content
         contentElement.innerHTML = DOMPurify.sanitize(post.content.rendered);
 
         if (
@@ -59,11 +56,11 @@ function fetchAllPosts(page) {
         ) {
           const imageElement = document.createElement("img");
           imageElement.src = post._embedded["wp:featuredmedia"][0].source_url;
-          imageElement.classList.add("post-image"); // Add a class to the image element
+          imageElement.classList.add("post-image");
           const altText = `${
             post.title.rendered
-          } - ${post.content.rendered.substring(0, 50)}`; // Descriptive alt text
-          imageElement.alt = altText.substring(0, 100); // Limit alt text to 100 characters
+          } - ${post.content.rendered.substring(0, 50)}`;
+          imageElement.alt = altText.substring(0, 100);
           postElement.appendChild(imageElement);
         }
 
@@ -84,18 +81,27 @@ function setupOlderPostsListener() {
   olderPostsDiv.addEventListener("click", () => {
     console.log(
       `Older posts button clicked. Moving to page ${currentPage + 1}`
-    ); // Log when older posts are requested
+    );
     fetchAllPosts(++currentPage);
   });
 }
 
-function setupBackToTopButton() {
-  const backToTopButton = document.getElementById("back-top");
-  backToTopButton.addEventListener("click", () => {
-    console.log("Back to top button clicked."); // Log when back to top button is clicked
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+window.addEventListener("scroll", function () {
+  var scrollToTopContainer = document.getElementById("scrollToTopContainer");
+  if (window.scrollY > 300) {
+    scrollToTopContainer.style.display = "block";
+    console.log("Displaying scroll-to-top button.");
+  } else {
+    scrollToTopContainer.style.display = "none";
+    console.log("Hiding scroll-to-top button.");
+  }
+});
+
+var scrollToTopButton = document.getElementById("scrollToTopContainer");
+scrollToTopButton.addEventListener("click", function () {
+  console.log("Scroll-to-top button clicked. Scrolling to top.");
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
   });
-}
+});

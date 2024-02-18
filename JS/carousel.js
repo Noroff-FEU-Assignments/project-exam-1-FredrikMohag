@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   fetchLatestPosts();
 
   function moveSlide(n) {
+    console.log("Moving slide by", n);
     showSlide((slideIndex += n));
   }
 
@@ -70,12 +71,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((error) => console.error("Error fetching posts:", error));
   }
 
-  // Attach event listeners to next/prev buttons
-  document
-    .querySelector(".prev")
-    .addEventListener("click", () => moveSlide(-1));
-  document.querySelector(".next").addEventListener("click", () => moveSlide(1));
-
   // Swipe functionality
   const carousel = document.querySelector(".carousel");
   carousel.addEventListener("touchstart", handleTouchStart, false);
@@ -92,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function handleTouchEnd() {
     const deltaX = touchStartX - touchEndX;
+    console.log("Swipe distance:", deltaX);
     if (Math.abs(deltaX) > minSwipeDistance) {
       if (deltaX > 0) {
         moveSlide(1); // swipe left
@@ -103,4 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
     touchStartX = 0;
     touchEndX = 0;
   }
+
+  // Attach event listeners to next/prev buttons
+  document.querySelector(".prev").addEventListener("click", () => {
+    console.log("Previous button clicked");
+    moveSlide(-1);
+  });
+  document.querySelector(".next").addEventListener("click", () => {
+    console.log("Next button clicked");
+    moveSlide(1);
+  });
 });

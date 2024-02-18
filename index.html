@@ -65,6 +65,11 @@
         <a href="hello.html" class="hello-page">HELLO</a>
       </nav>
     </header>
+    <div id="scrollToTopContainer" aria-hidden="true" style="display: none">
+      <img id="scrollToTopImage" src="images/scroll.png" alt="scrollToTop" />
+    </div>
+    <div id="overlay" style="display: none"></div>
+
     <img
       class="hello-image"
       src="images/hello-image.jpeg"
@@ -130,14 +135,11 @@
         <h2>LATEST POSTS</h2>
         <div id="carousel" class="carousel">
           <div class="carousel-slides"></div>
-          <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-          <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
         </div>
         <h2>MORE POSTS</h2>
         <div id="posts-container"></div>
-      </div>
-      <div id="scrollToTopContainer" aria-hidden="true" style="display: none">
-        <img id="scrollToTopImage" src="images/scroll.png" alt="scrollToTop" />
       </div>
     </div>
     <div
